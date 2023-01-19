@@ -1,17 +1,11 @@
-HEADERS = kbfunc.h
+all: math
 
-all: kb kbfunc
-
-kb: kb.o kbfunc.o
-	gcc -o kb kb.o kbfunc.o
+math: math.o
+	gcc -o math math.o -lm
 	
-kb.o: kb.c
-	gcc -c kb.c
-
-kbfunc.o: kbfunc.c
-	gcc -c kbfunc.c
+math.o: math.c
+	gcc -c math.c
 
 clean: 
-	-rm -f kb.o	
-	-rm -f kbfunc.o
-	-rm -f kb
+	-rm -f math.o	
+	-rm -f math
